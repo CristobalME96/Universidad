@@ -1,0 +1,12 @@
+print ("ingrese el valor del producto 1")
+product1 = int(input())
+print ("ingrese el valor del producto 2")
+product2 = int(input())
+print ("ingrese el valor del producto 3")
+product3 = int(input())
+print ("ingrese el valor del producto 4")
+product4 = int(input())
+print ("ingrese el valor del producto 5")
+product5 = int(input())
+valorT = product1 + product2 + product3 + product4 + product5
+print ("el valor total de los productos es: $", valorT)
