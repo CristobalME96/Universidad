@@ -1,5 +1,5 @@
 num = int(input())
-leiniz
-for i in range (0, n + 1)
-    leiniz += ((-1)**0)/((2*i)+1)
+leiniz = float()
+for i in range (0, num + 1):
+    leiniz += ((-1)**i)/((2*i)+1)
 print(leiniz)
