@@ -14,7 +14,34 @@ def ingresarPotencia():
             semana = []
     return Potencia
 
+def potenciapromedio(Potencia):
+    suma = 0
+    for S in Potencia:
+        for D in S:
+            suma += D
+    promedio = suma/len(Potencia)*7
+    return promedio
+
+def potenciapromediodia(Potencia):
+    promedio = [0,0,0,0,0,0,0]
+    for S in Potencia:
+        for i in range(len(s)):
+            promedio[i] += S[i]
+    for i in range(len(suma)):
+        promedio[i] = promedio[i]/len(Potencia)
+    dia_mayor = 0
+    for i in range(len(promedio)):
+        if promedio[dia_mayor] < promedio[i]:
+            dia_mayor = i
+
+def mayores(Potencia):
+    promedio = potenciapromedio(Potencia)
+    Total = 0
+    for S in Potencia:
+        for D in S:
+            if S > promedio:
+                total += 1
+    print(Total)
+
 potencia = ingresarPotencia()
-for S in potencia:
-    for D in S:
-        print(D)
+potenciapromedio(potencia)
