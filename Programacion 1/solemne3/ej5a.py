@@ -7,6 +7,14 @@ for i in range(len(A)): #suma de matrices
         fila.append(A[i][j] + B[i][j])
     matriz.append(fila)
 
+
+transpuesta = []
+for i in range(len(A)): #transpuesta de A
+    fila = []
+    for j in range(len(A[0])):
+        fila.append(A[j][i])
+    transpuesta.append(fila)
+
 for fila in matriz:
     print(fila)
 
