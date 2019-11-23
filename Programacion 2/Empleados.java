@@ -1,4 +1,4 @@
-//comentario
+
 public class Empleado{
     private String rut;
     private String nombre;
