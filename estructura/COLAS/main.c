@@ -1,32 +1,29 @@
+#include <stdio.h>
 #include "cola.h"
 
+void sobreviviente(Cola *cola, int m){
+  int i = 1;
+  while(cola->tamano > 1){
+    if(i == m){       //mata m
+      i = 1;
+    }else{            //salta m-1
+      push(cola, pop(cola)->dato1);
+      i++;
+    }
+  }
+  printf("el sobreviviente es el de la posicion %i\n", pop(cola)->dato1);
+}
 
-/**
- * Función Principal
- *
- */
-int main(int argc, char *argv[])
-{
+int main(){
   Cola *C;
   C = creaCola();
-  push(C, 1);
-  push(C, 2);
-  push(C, 3);
-  push(C, 4);
-  printf("inicio: % d - fin: % d\n",
-         primero(C)->datos->dato1, ultimo(C)->datos->dato1);
-  pop(C);
-  printf("inicio: % d - fin: % d\n",
-         primero(C)->datos->dato1, ultimo(C)->datos->dato1);
-  push(C, 5);
-  push(C, 6);
-  printf("inicio: % d - fin: % d\n",
-         primero(C)->datos->dato1, ultimo(C)->datos->dato1);
-  destruirCola(C);
-	C = creaCola();
-  push(C, 7);
-  push(C, 8);
-  printf("inicio: % d - fin: % d\n",
-         primero(C)->datos->dato1, ultimo(C)->datos->dato1);
-  return 0;
+  int p, m;
+  printf("ingrese la cantidad de personas\n");
+  scanf("%i", &p);
+  for(int i = 0; i<p ; i++){
+    push(C, i+1);
+  }
+  printf("ingrese la cantidad de saltos\n");
+  scanf("%i", &m);
+  sobreviviente(C, m);
 }

@@ -66,12 +66,14 @@ Nodo *crearNodo(Info *dato, Nodo *ptro) {
  * @return pdato: puntero de Info.
  */
 
-Info *agregar(int dato1) {
+Info *agregar(int dato1, int dato2, int dato3) {
 	Info *pdato;
 	pdato = (Info *) malloc(sizeof(Info));
 	if(pdato) {
 		/* Se almacena la información en Info */
-		pdato->dato1 = dato1;
+		pdato->valor = dato1;
+		pdato->rut = dato2;
+		pdato->n = dato3;
 		/* pdato->dato2 = dato2; */
 		return pdato;
 	} else {
@@ -90,9 +92,9 @@ Info *agregar(int dato1) {
  * @return true: si la inserción tuvo éxito, false: en caso contrario.
  */
 
-bool insertar(Lista *plista, int info) {
+bool insertar(Lista *plista, int info, int rut) {
 	Nodo *aux;
-	Info *dato = agregar(info);
+	Info *dato = agregar(info, rut, plista->tamano + 1);
 	// Se crea un nodo con datos y apunta al siguiente nodo
 	aux = crearNodo(dato, plista->inicio);
 	if(aux) {//además, se almacena en aux
@@ -100,7 +102,7 @@ bool insertar(Lista *plista, int info) {
 		if(plista->tamano == 0)
 			plista->fin = aux;
 		plista->tamano++;
-		printf("Se inserta % d\n", plista->inicio->datos->dato1);
+		//printf("Se inserta % d\n", plista->inicio->datos->dato1);
 
 			return true;
 	} else {
@@ -119,9 +121,9 @@ bool insertar(Lista *plista, int info) {
 
 int eliminar(Lista *plista) {
 	Nodo *aux;
-	int dato;
+	int dato1, dato2;
 	aux = plista->inicio; //se guarda el nodo a eliminar (el primero) en un aux
-	dato = aux->datos->dato1; //sus datos también
+	dato1 = aux->datos->dato1; //sus datos también
 	plista->inicio = aux->siguiente;
 	plista->tamano--;
 	if(plista->tamano == 0)

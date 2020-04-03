@@ -8,7 +8,10 @@
  * Estructura que guarda la información.
  */
 typedef struct info {
-	int dato1;
+	int valor;
+	int rut;
+	int n;
+
 	/* int dato2; */
 	/* ... */
 }Info;
@@ -33,7 +36,7 @@ typedef struct lista {
 Lista *creaLista();
 void destruirLista(Lista *plista);
 Nodo *crearNodo(Info *dato, Nodo *ptro);
-Info * agregar(int dato1);
+Info * agregar(int dato1, int dato2, int dato3);
 bool insertar(Lista *plista, int info);
 int eliminar(Lista *plista);
 void recorrer(Lista *plista);

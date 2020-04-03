@@ -53,7 +53,6 @@ Pila *creaPila();
 void destruirPila(Pila *p);
 Nodo *tope(Pila *p);
 bool vacia(Pila *p);
-void ingresar(Info **pdato, int dato1);
-bool apilar (Pila * p, int info);
+void ingresar(Info **pdato, char dato1);
+bool apilar (Pila * p, char info);
 bool desapilar (Pila * p);
-

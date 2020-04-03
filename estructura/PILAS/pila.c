@@ -98,7 +98,7 @@ bool vacia(Pila *p)
  *
  */
 
-void ingresar(Info **pdato, int dato1)
+void ingresar(Info **pdato, char dato1)
 {
   if(*pdato = (Info *) malloc(sizeof(Info)))
     {
@@ -123,7 +123,7 @@ void ingresar(Info **pdato, int dato1)
  * @return true: si se apiló correctamente, false: en caso contrario.
  *
  */
-bool apilar (Pila * p, int info)
+bool apilar (Pila * p, char info)
 {
   Info *pdato;
   Nodo *nodo;
@@ -134,7 +134,7 @@ bool apilar (Pila * p, int info)
       nodo->siguiente = p->tope;
       p->tope = nodo;
       p->tamano++;
-      printf("Se apiló % d\n", p->tope->datos->dato1);
+      //printf("Se apiló % c\n", p->tope->datos->dato1);
       return true;
     }
   else
@@ -157,7 +157,7 @@ bool desapilar (Pila * p)
   Nodo *aux;
   if (vacia(p))
     {
-      printf("La pila está vacía no se puede desapilar\n");
+      //printf("La pila está vacía no se puede desapilar\n");
       return false;
     }
   else
