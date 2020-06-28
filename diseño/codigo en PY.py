@@ -1,6 +1,6 @@
 from collections import deque
 import math
-
+aaaa
 class Grafo:
 
   def __init__(self):
@@ -21,12 +21,12 @@ class Grafo:
         filas = columnas = len(self.matriz)
         matriz_aux = [[None] * (filas+1) for i in range(columnas+1)]
 
-        # Recorro la matriz y copio su contenido dentro de la matriz más grande.
+        # Recorro la matriz y copio su contenido dentro de la matriz mï¿½s grande.
         for i in range(filas):
             for j in range(columnas):
                 matriz_aux[i][j] = self.matriz[i][j]
 
-        # Igualo la matriz a la matriz más grande.
+        # Igualo la matriz a la matriz mï¿½s grande.
         self.matriz = matriz_aux
         return True
 
@@ -45,7 +45,7 @@ class Grafo:
 
   def imprimir_matriz(self, m, texto):
         cadena = ""
-        #Columnas 
+        #Columnas
         for i in range(len(m)):
             cadena += "\t" + str(self.vertices[i])
 
@@ -57,7 +57,7 @@ class Grafo:
                 if texto:
                     cadena += "\t" + str(m[i][j])
                 else:
-                
+
                         if m[i][j] is None or math.isinf(m[i][j]):
                             cadena += "\t" + "0"
                         else:
@@ -90,5 +90,5 @@ if __name__ == "__main__":
     g.agregar_arista("E","D",1,False)
     g.agregar_arista("F","G",1,False)
 
-    
+
     g.imprimir_matriz(g.matriz, False)
